@@ -11,7 +11,23 @@ import SwiftUI
 struct Tabuu_BilBakalimApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainAppView()
+        }
+    }
+}
+
+struct MainAppView: View {
+    @State private var showHome = false
+    
+    var body: some View {
+        Group {
+            if showHome {
+                NavigationStack {
+                    HomeView()
+                }
+            } else {
+                SplashScreenView(showHome: $showHome)
+            }
         }
     }
 }
