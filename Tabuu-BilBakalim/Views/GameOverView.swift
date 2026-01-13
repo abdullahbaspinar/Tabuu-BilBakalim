@@ -24,6 +24,14 @@ struct GameOverView: View {
                     
                     // Winner Announcement
                     VStack(spacing: 16) {
+                        Image("logo")
+                            .resizable()
+                            .renderingMode(.original)
+                            .antialiased(true)
+                            .interpolation(.high)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 120, height: 120)
+                        
                         Text("OYUN BİTTİ!")
                             .font(.system(size: 36, weight: .bold, design: .rounded))
                             .foregroundColor(Color("PrimaryColor"))

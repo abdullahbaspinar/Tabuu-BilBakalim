@@ -1,0 +1,30 @@
+[
+  {
+    "mainWord": "Erteleme",
+    "forbiddenWords": ["Sonra", "Yarın", "Geç", "Zaman", "Tembel"]
+  },
+  {
+    "mainWord": "Dedikodu",
+    "forbiddenWords": ["Konuşmak", "Başkası", "Söylemek", "Arkadan", "Fısıldamak"]
+  },
+  {
+    "mainWord": "Kıskançlık",
+    "forbiddenWords": ["Yeşil", "Başkası", "İstemek", "Kırmak", "Öfke"]
+  },
+  {
+    "mainWord": "Gerginlik",
+    "forbiddenWords": ["Sinir", "Stres", "Rahatsız", "Huzursuz", "Sıkıntı"]
+  },
+  {
+    "mainWord": "Hayal Kırıklığı",
+    "forbiddenWords": ["Beklemek", "Olmak", "Üzülmek", "Kırgın", "İncinmek"]
+  },
+  {
+    "mainWord": "Tavla",
+    "forbiddenWords": ["Zar", "Oyun", "Mars", "Kapı", "Esnaf"]
+  },
+  {
+    "mainWord": "Futbol",
+    "forbiddenWords": ["11 kişi", "Kadro", "Stadyum", "Süper Lig", "UEFA Kupası"]
+  }
+]

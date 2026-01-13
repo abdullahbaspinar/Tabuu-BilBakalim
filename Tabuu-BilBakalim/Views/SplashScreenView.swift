@@ -17,18 +17,15 @@ struct SplashScreenView: View {
             Color("FourthColor")
                 .ignoresSafeArea()
             
-            VStack(spacing: 20) {
-                Text("TABUU")
-                    .font(.system(size: 64, weight: .bold, design: .rounded))
-                    .foregroundColor(Color("PrimaryColor"))
-                    .scaleEffect(scale)
-                    .opacity(opacity)
-                
-                Text("Bil Bakalım")
-                    .font(.system(size: 24, weight: .medium, design: .rounded))
-                    .foregroundColor(Color("SecondaryColor"))
-                    .opacity(opacity)
-            }
+            Image("logo")
+                .resizable()
+                .renderingMode(.original)
+                .antialiased(true)
+                .interpolation(.high)
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 300, maxHeight: 300)
+                .scaleEffect(scale)
+                .opacity(opacity)
         }
         .onAppear {
             withAnimation(.easeOut(duration: 0.8)) {

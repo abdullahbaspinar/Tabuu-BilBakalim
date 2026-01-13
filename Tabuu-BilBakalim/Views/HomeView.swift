@@ -18,14 +18,16 @@ struct HomeView: View {
             VStack(spacing: 40) {
                 Spacer()
                 
-                VStack(spacing: 12) {
-                    Text("TABUU")
-                        .font(.system(size: 56, weight: .bold, design: .rounded))
-                        .foregroundColor(Color("PrimaryColor"))
+                VStack(spacing: 16) {
+                    Image("logo")
+                        .resizable()
+                        .renderingMode(.original)
+                        .antialiased(true)
+                        .interpolation(.high)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 300, height: 300)
                     
-                    Text("Bil Bakalım")
-                        .font(.system(size: 20, weight: .medium, design: .rounded))
-                        .foregroundColor(Color("SecondaryColor"))
+                    
                 }
                 
                 Spacer()

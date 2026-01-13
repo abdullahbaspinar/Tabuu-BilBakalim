@@ -96,16 +96,64 @@ struct GameScreenView: View {
                 viewModel.startGame()
             }
         }
-        .alert("Oyun Durduruldu", isPresented: $showPauseAlert) {
-            Button("Devam") {
-                viewModel.resumeGame()
+        .overlay {
+            if showPauseAlert {
+                ZStack {
+                    Color.black.opacity(0.5)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            // Dışarı tıklamayla kapanmasın
+                        }
+                    
+                    VStack(spacing: 20) {
+                        Text("Oyun Durduruldu")
+                            .font(.system(size: 24, weight: .bold))
+                            .foregroundColor(Color("PrimaryColor"))
+                            .padding(.bottom, 8)
+                        
+                        Text("Ne yapmak istersiniz?")
+                            .font(.system(size: 16))
+                            .foregroundColor(Color("SecondaryColor"))
+                            .padding(.bottom, 20)
+                        
+                        Button(action: {
+                            viewModel.resumeGame()
+                            showPauseAlert = false
+                        }) {
+                            Text("Devam")
+                                .font(.system(size: 18, weight: .semibold))
+                                .foregroundColor(.white)
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 50)
+                                .background(Color("PrimaryColor"))
+                                .cornerRadius(12)
+                        }
+                        
+                        Button(action: {
+                            viewModel.pauseGame()
+                            showPauseAlert = false
+                            dismiss()
+                        }) {
+                            Text("Kuruluma Dön")
+                                .font(.system(size: 18, weight: .semibold))
+                                .foregroundColor(Color("PrimaryColor"))
+                                .frame(maxWidth: .infinity)
+                                .frame(height: 50)
+                                .background(Color("SecondaryColor"))
+                                .cornerRadius(12)
+                        }
+                    }
+                    .padding(30)
+                    .background(
+                        RoundedRectangle(cornerRadius: 20)
+                            .fill(Color("FourthColor"))
+                            .shadow(color: Color.black.opacity(0.3), radius: 20, x: 0, y: 10)
+                    )
+                    .padding(40)
+                }
+                .transition(.opacity)
+                .zIndex(1000)
             }
-            Button("Kuruluma Dön", role: .destructive) {
-                viewModel.pauseGame()
-                dismiss()
-            }
-        } message: {
-            Text("Ne yapmak istersiniz?")
         }
         .fullScreenCover(isPresented: $viewModel.shouldShowChangeScreen) {
             ChangeScreenView(viewModel: viewModel)
@@ -130,21 +178,22 @@ struct TimerBarView: View {
     
     var body: some View {
         VStack(spacing: 8) {
-            HStack {
+            HStack(spacing: 12) {
+                Text("\(timeRemaining) sn")
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundColor(Color("SecondaryColor"))
+                    .frame(minWidth: 70, alignment: .leading)
+                
                 ProgressView(value: progress)
                     .tint(Color("PrimaryColor"))
                     .scaleEffect(x: 1, y: 2, anchor: .center)
-                
-                Text("Kalan: \(timeRemaining) sn")
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundColor(Color("SecondaryColor"))
-                    .frame(width: 100)
                 
                 Button(action: onPause) {
                     Image(systemName: "pause.fill")
                         .font(.system(size: 20))
                         .foregroundColor(Color("PrimaryColor"))
                 }
+                .frame(width: 44)
             }
         }
         .padding(.vertical, 8)
@@ -194,6 +243,9 @@ struct GameCardView: View {
                     .font(.system(size: 52, weight: .bold, design: .rounded))
                     .foregroundColor(.white)
                     .multilineTextAlignment(.center)
+                    .lineLimit(nil)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .minimumScaleFactor(0.5)
                     .padding(.horizontal, 24)
                     .shadow(color: Color.black.opacity(0.2), radius: 2, x: 0, y: 1)
                 
@@ -202,23 +254,22 @@ struct GameCardView: View {
                     .frame(height: 2)
                     .padding(.horizontal, 24)
                 
-                VStack(alignment: .leading, spacing: 18) {
+                VStack(spacing: 18) {
                     Text("Yasak Kelimeler:")
                         .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(Color("ThirdColor"))
+                        .foregroundColor(Color("PrimaryColor"))
                     
                     ForEach(card.forbiddenWords, id: \.self) { word in
-                        HStack(spacing: 12) {
-                            Image(systemName: "xmark.circle.fill")
-                                .font(.system(size: 18))
-                                .foregroundColor(Color("PrimaryColor"))
-                            Text(word)
-                                .font(.system(size: 22, weight: .medium))
-                                .foregroundColor(.white)
-                        }
+                        Text(word)
+                            .font(.system(size: 22, weight: .medium))
+                            .foregroundColor(.white)
+                            .multilineTextAlignment(.center)
+                            .lineLimit(nil)
+                            .fixedSize(horizontal: false, vertical: true)
+                            .minimumScaleFactor(0.7)
                     }
                 }
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(maxWidth: .infinity)
                 .padding(.horizontal, 24)
             }
             .padding(.vertical, 36)
