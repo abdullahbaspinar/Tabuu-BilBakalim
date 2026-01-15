@@ -92,4 +92,8 @@
       "mainWord":"Sörf",
       "forbiddenWords":["Dalga","Deniz","Su","Board","Rüzgar"]
   },
+  {
+      "mainWord":"Ankara",
+      "forbiddenWords"["ODTÜ","Anıtkabir","Başkent","06","Behzat Ç."]
+  }
 ]
