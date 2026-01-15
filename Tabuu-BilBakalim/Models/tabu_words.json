@@ -26,5 +26,70 @@
   {
     "mainWord": "Futbol",
     "forbiddenWords": ["11 kişi", "Kadro", "Stadyum", "Süper Lig", "UEFA Kupası"]
-  }
+  },
+  {
+      "mainWord": "Dinazor",
+      "forbiddenWords": ["Soyu Tükenmiş","Fosil","T-Rex","Evrim","Jura"]
+  },
+  {
+      "mainWord":"Picasso",
+      "forbiddenWords": ["Sanatçı", "Kubizm","Resim","İspanya","Van Gogh"]
+    
+  },
+  {
+      "mainWord":"Senfoni",
+      "forbiddenWords":["Müzik","Orkestra","Beethoven","Enstrüman","Şef"]
+  },
+  {
+      "mainWord":"Mona Lisa",
+      "forbiddenWords":["Resim","Gülümseme","Da Vinci","Fransa","Louvre"]
+  },
+  {
+      "mainWord:":"Çöl",
+      "forbiddenwords":["Piramit","Mısır","Kum","Serap","Deve"]
+  },
+  {
+      "mainWord":"Everesrt",
+      "forbiddenWords":["Dağ","Zirve","Nepal","Tırmanmak","Yüksek"]
+  },
+  {
+      "mainWord":"Mtero",
+      "forbiddenwords":["Toplu Taşıma","Marmaray","Yeraltı","Tren","Vagon"]
+  },
+  {
+      "mainWord":"Titanik",
+      "forbiddenWords":["Gemi","Film","Felaket","Buzdağı","Leonardo Di Caprio"]
+  },
+  {
+      "mainWord":"Anahtar",
+      "forbiddenWords":["Çilingir","Kapı","Kilit","Unutmak","Açmak"]
+  },
+  {
+      "mainword":"Doberman",
+      "forbiddenWords":["Köpek","Siyah","Alman","Korkmak","Saldırgan"]
+  },
+  {
+      "mainWord":"Hemşire",
+      "forbiddenWords":["Hastane","Kadın","Beyaz","İğne","Doktor"]
+  },
+  {
+      "mainWord":"Mızıka",
+      "forbiddenWords":["Müzik","Çalgı","Üflemek","Ağız","Armonika"]
+  },
+  {
+      "mainWord":"Aseton",
+      "forbiddenWords":["Oje","Tırnak","El","Silmek","Parmak"]
+  },
+  {
+      "mainWord":"Blöf",
+      "forbiddenWords":["Poker","İskambil","Gibi","Yanıltmak","Yalan"]
+  },
+  {
+      "mainWord":"Makyaj",
+      "forbiddenWords":["Kadın","Güzel","Ruj","Rimel","Yüz"]
+  },
+  {
+      "mainWord":"Sörf",
+      "forbiddenWords":["Dalga","Deniz","Su","Board","Rüzgar"]
+  },
 ]
