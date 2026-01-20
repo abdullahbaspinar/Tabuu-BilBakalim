@@ -96,4 +96,8 @@
       "mainWord":"Ankara",
       "forbiddenWords"["ODTÜ","Anıtkabir","Başkent","06","Behzat Ç."]
   }
+  {
+      "mainWord":"İstanbul",
+      "forbiddenWords":["Sultanahmet","Ayasofya","Boğaz","Kadıköy","7 Tepe"]
+  }
 ]
